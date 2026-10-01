@@ -11,7 +11,7 @@
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
     padding: 20px 25px;
     margin-bottom: 20px;
@@ -19,7 +19,7 @@
 
     background-color: #ffffff;
 
-    border: 1px solid #e5e5e5;
+    border: 1px solid #b9b7b7;
     border-radius: 12px;
 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -28,7 +28,7 @@
 }
 
 .container1 h1 {
-    margin: 0;
+    margin:auto;
 
     font-size: 24px;
     color: #222;
@@ -40,16 +40,16 @@
 }
 
 #criarDiv {
-    padding: 9px 15px;
+    padding: 5px 10px;
 
     background-color: #2563eb;
     color: white;
 
     border: none;
-    border-radius: 7px;
+    border-radius: 9px;
 
     font-size: 14px;
-    font-weight: 500;
+    font-weight:600;
 
     cursor: pointer;
 
@@ -65,16 +65,16 @@
 }
 
 #removDiv {
-    padding: 9px 15px;
+    padding: 4px 9px;
 
     background-color: #dc2626;
     color: #ffffff;
 
     border: 1px solid #dc2626;
-    border-radius: 7px;
+    border-radius: 9px;
 
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 700;
 
     cursor: pointer;
 
@@ -137,8 +137,8 @@
     color: #2563eb;
     border: 1px solid #2563eb;
 
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 7.3px 10px;
+    border-radius: 10px;
 
     cursor: pointer;
     transition: 0.2s;
@@ -154,15 +154,12 @@
     color: #dc2626;
 
     border: 1px solid #dc2626;
-    border-radius: 6px;
+    border-radius: 5px;
 
-    padding: 6px 10px;
-
-    font-size: 13px;
-    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 10px;
 
     cursor: pointer;
-
     transition: all 0.2s ease;
 }
 

@@ -17,11 +17,11 @@ botao.addEventListener("click", () => {
 
     const botaoEditar = document.createElement("button");
     botaoEditar.classList.add("btnEdit");
-    botaoEditar.textContent = "Editar";
+    botaoEditar.textContent = "\u270F\uFE0F";
 
     const botaoRemover = document.createElement("Remover");
     botaoRemover.classList.add("removDiv");
-    botaoRemover.textContent = "Remover";
+    botaoRemover.textContent = "\u{1F5D1}";
 
     // botao checkbox acionado
     checkbox.addEventListener("change", () => {
@@ -117,7 +117,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         const botaoRemover = document.createElement("Remover");
         botaoRemover.classList.add("removDiv");
-        botaoRemover.textContent = "Remover";
+        botaoRemover.textContent = "\u{1F5D1}";
 
         if (checkbox.checked) {
 
@@ -129,7 +129,7 @@ window.addEventListener("DOMContentLoaded", () => {
         // botao de edit
         const botaoEditar = document.createElement("button");
         botaoEditar.classList.add("btnEdit");
-        botaoEditar.textContent = "Editar";
+        botaoEditar.textContent = "\u270F\uFE0F";
 
         // botao de check acionado
         checkbox.addEventListener("change", () => {
