@@ -2,67 +2,28 @@ const botao = document.getElementById("criarDiv");
 const botao2 = document.getElementById("removDiv")
 const container = document.getElementById("container");
 
-/*
-botao.addEventListener("click", () => {
-    const novaDiv = document.createElement("div");
-    novaDiv.textContent = "Nova Tarefa!";
-    novaDiv.style.border = "1px solid #000";
-    novaDiv.style.padding = "8px";
-    novaDiv.style.marginTop = "5px";
-    container.appendChild(novaDiv);
-
-    let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
-    
-    tarefas.push(novaDiv.textContent);
-
-    localStorage.setItem("tarefas", JSON.stringify(tarefas));
-
-});
-
-window.addEventListener("DOMContentLoaded", () => {
-
-    const divs = JSON.parse(localStorage.getItem("tarefas")) || [];
-
-    divs.forEach(texto => {
-        const novaDiv = document.createElement("div");
-
-        novaDiv.textContent = texto;
-        novaDiv.style.border = "1px solid #000";
-        novaDiv.style.padding = "8px";
-        novaDiv.style.marginTop = "5px";
-        container.appendChild(novaDiv);
-    });
-
-});
-
-botao2.addEventListener("click", () => {
-    container.innerHTML = "";
-    localStorage.removeItem("tarefas");
-});
-
-
-
-*/
 botao.addEventListener("click", () => {
 
     const novaDiv = document.createElement("div");
-    novaDiv.classList.add = "novaDiv"
-    novaDiv.style.border = "1px solid #000";
-    novaDiv.style.padding = "8px";
-    novaDiv.style.marginTop = "5px";
-    novaDiv.style.gap = "15px";
+    novaDiv.classList.add("tarefa");
+
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
 
     const textoTarefa = document.createElement("span");
+    textoTarefa.classList.add("txtTaf");
     textoTarefa.textContent = "Nova Tarefa!";
 
     const botaoEditar = document.createElement("button");
-
+    botaoEditar.classList.add("btnEdit");
     botaoEditar.textContent = "Editar";
-    botaoEditar.style.marginLeft = "10px";
 
+    const botaoRemover = document.createElement("Remover");
+    botaoRemover.classList.add("removDiv");
+    botaoRemover.textContent = "Remover";
+
+    // botao checkbox acionado
     checkbox.addEventListener("change", () => {
 
         if (checkbox.checked) {
@@ -80,6 +41,7 @@ botao.addEventListener("click", () => {
         salvarTarefas();
     });
 
+    // botao de edit acionado
     botaoEditar.addEventListener("click", () => {
 
         const novoTexto = prompt(
@@ -96,16 +58,21 @@ botao.addEventListener("click", () => {
 
     });
 
+    botaoRemover.addEventListener("click", () => {
+            novaDiv.remove();
+        });
+
     novaDiv.appendChild(checkbox);
     novaDiv.appendChild(textoTarefa);
     novaDiv.appendChild(botaoEditar);
-
+    novaDiv.appendChild(botaoRemover);
     container.appendChild(novaDiv);
 
     salvarTarefas();
 
 });
 
+// função que salva as tarefas
 function salvarTarefas() {
 
     const tarefas = [];
@@ -133,18 +100,24 @@ window.addEventListener("DOMContentLoaded", () => {
 
     tarefas.forEach(tarefa => {
 
+        // div
         const novaDiv = document.createElement("div");
-        novaDiv.classList.add("novaDiv")
-
-
+        novaDiv.classList.add("tarefa");
+      
+        // checkbox
         const checkbox = document.createElement("input");
 
         checkbox.type = "checkbox";
         checkbox.checked = tarefa.concluida;
 
+        // txt da tarefa
         const textoTarefa = document.createElement("span");
-
+        textoTarefa.classList.add("txtTaf");
         textoTarefa.textContent = tarefa.texto;
+
+        const botaoRemover = document.createElement("Remover");
+        botaoRemover.classList.add("removDiv");
+        botaoRemover.textContent = "Remover";
 
         if (checkbox.checked) {
 
@@ -153,11 +126,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
         }
 
+        // botao de edit
         const botaoEditar = document.createElement("button");
-
+        botaoEditar.classList.add("btnEdit");
         botaoEditar.textContent = "Editar";
-        botaoEditar.style.marginLeft = "10px";
 
+        // botao de check acionado
         checkbox.addEventListener("change", () => {
 
             if (checkbox.checked) {
@@ -176,6 +150,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         });
 
+        // botao de editar acionado
         botaoEditar.addEventListener("click", () => {
 
             const novoTexto = prompt(
@@ -193,14 +168,18 @@ window.addEventListener("DOMContentLoaded", () => {
 
         });
 
+        botaoRemover.addEventListener("click", () => {
+            novaDiv.remove();
+        });
 
         novaDiv.appendChild(checkbox);
         novaDiv.appendChild(textoTarefa);
         novaDiv.appendChild(botaoEditar);
-
+        novaDiv.appendChild(botaoRemover);
         container.appendChild(novaDiv);
 
     });
+    
 
 });
 
