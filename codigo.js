@@ -2,11 +2,11 @@ const botao = document.getElementById("criarDiv");
 const botao2 = document.getElementById("removDiv")
 const container = document.getElementById("container");
 
+
 botao.addEventListener("click", () => {
 
     const novaDiv = document.createElement("div");
     novaDiv.classList.add("tarefa");
-
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
@@ -58,6 +58,7 @@ botao.addEventListener("click", () => {
 
     });
 
+    // botao de remover acionado 
     botaoRemover.addEventListener("click", () => {
             novaDiv.remove();
         });
@@ -71,6 +72,7 @@ botao.addEventListener("click", () => {
     salvarTarefas();
 
 });
+
 
 // função que salva as tarefas
 function salvarTarefas() {
@@ -185,8 +187,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
 botao2.addEventListener("click", () => {
 
-    container.innerHTML = "";
+    const resposta = confirm(
+        "Tem certeza que deseja apagar todas as tarefas?"
+    );
 
-    localStorage.removeItem("tarefas");
+    if (resposta) {
+        container.innerHTML = "";
+        localStorage.removeItem("tarefas");
+    }
 
 });
